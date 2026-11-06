@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AgroControl · Agroinsumos del Llano S.A.S.</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Pantalla de inicio de sesión -->
+  <section id="login-view" class="login-wrap">
+    <form id="login-form" class="login-card">
+      <div class="brand-big">🌱 AgroControl</div>
+      <p class="muted">Gestión de pedidos e inventario<br>Agroinsumos del Llano S.A.S. · Cabuyaro, Meta</p>
+      <label>Usuario<input id="login-user" autocomplete="username" required></label>
+      <label>Contraseña<input id="login-pass" type="password" autocomplete="current-password" required></label>
+      <p id="login-error" class="error hidden">Usuario o contraseña incorrectos.</p>
+      <button class="btn primary full" type="submit">Ingresar</button>
+      <div class="demo-users">
+        <strong>Usuarios de prueba</strong>
+        <span>admin / admin123 — Administrador</span>
+        <span>vendedor / vend123 — Vendedor</span>
+        <span>bodega / bod123 — Bodeguero</span>
+      </div>
+    </form>
+  </section>
+
+  <!-- Aplicación -->
+  <section id="app-view" class="app hidden">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand">🌱 AgroControl</div>
+      <nav id="menu"></nav>
+      <div class="sidebar-foot">
+        <div id="user-info"></div>
+        <button class="btn ghost full" id="logout-btn">Cerrar sesión</button>
+        <button class="btn ghost full small" id="reset-btn" title="Restaura los datos de demostración">Restablecer datos demo</button>
+      </div>
+    </aside>
+    <main class="content">
+      <header class="topbar">
+        <button class="btn ghost menu-toggle" id="menu-toggle">☰</button>
+        <h1 id="view-title"></h1>
+        <span id="alert-badge" class="badge danger hidden"></span>
+      </header>
+      <div id="view"></div>
+    </main>
+  </section>
+
+  <!-- Modal genérico -->
+  <div id="modal" class="modal hidden">
+    <div class="modal-card">
+      <div class="modal-head"><h2 id="modal-title"></h2><button class="btn ghost" id="modal-close">✕</button></div>
+      <div id="modal-body"></div>
+    </div>
+  </div>
+  <div id="toast" class="toast hidden"></div>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
